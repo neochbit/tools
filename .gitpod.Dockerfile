@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
+
 ENV DEBIAN_FRONTEND=noninteractive
 RUN ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+
 # Instalar Docker y herramientas necesarias
 RUN apt-get update && apt-get install -y \
     docker.io \
