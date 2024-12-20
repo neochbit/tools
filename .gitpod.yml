@@ -1,0 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Start Environment
+    init: |
+      sudo service docker start
+    command: bash
