@@ -21,8 +21,11 @@ RUN apt-get install -y \
     vim && \
     apt-get clean
 
-# Configurar permisos para Docker
-RUN groupadd docker && usermod -aG docker gitpod
+# Omitir configuración de permisos para Docker
+# Gitpod ya maneja usuarios/grupos automáticamente.
+# Configurar permisos en contenedores personalizados no es necesario.
+# Puedes eliminar las siguientes líneas si no necesitas Docker dentro del contenedor:
+# RUN groupadd docker && usermod -aG docker gitpod
 
 # Configurar directorio de trabajo
 WORKDIR /workspace
